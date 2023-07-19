@@ -2,7 +2,7 @@
 
 <div align="center">
  
-  <img src="src\spacex-logo.png" alt="logo" width="200"  height="auto">
+  <img src="src\logo.svg" alt="logo" width="200"  height="auto">
   <br/>
 
   <h3><b>MET Art App</b></h3>
