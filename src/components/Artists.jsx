@@ -2,8 +2,13 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArtistsByName } from '../redux/features/artists/artistsSlice';
-import VanGogh from '../images/vangogh.jpg';
+import selectedArtists from './selectedArtists';
 import styles from '../styles/Artists.module.css';
+import VanGogh from '../images/vangogh.jpg';
+import Renoir from '../images/Pierre-auguste-Renoir-Self-Portrait-2-.jpeg';
+import Klimt from '../images/el-beso-klimt.jpg';
+import Monet from '../images/Claude_Monet_-_Self_Portrait_with_a_Beret_-_1886-665x800.jpg';
+import Cezanne from '../images/selbstbildnis_cezanne_E.jpg';
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -12,8 +17,9 @@ const Artists = () => {
   const error = useSelector((state) => state.artists.error);
 
   useEffect(() => {
-    // Aquí realizamos el fetch con el nombre y apellido
-    dispatch(fetchArtistsByName({ name: 'Vincent', lastname: 'Van Gogh' }));
+    selectedArtists.forEach((artist) => {
+      dispatch(fetchArtistsByName({ name: artist.name, lastname: artist.lastname }));
+    });
   }, [dispatch]);
 
   if (isLoading) {
@@ -29,22 +35,21 @@ const Artists = () => {
     );
   }
 
-  // Verificamos si artists está definido y contiene datos antes de usar Object.keys()
-  if (!artists || Object.keys(artists).length === 0) {
-    return <p>No hay artistas disponibles.</p>;
-  }
-
   return (
     <div>
-      {Object.keys(artists).map((lastName) => (
-        <div key={lastName}>
-          <h3>{`${lastName}`}</h3>
+      {selectedArtists.map((artist) => (
+        <div key={artist.lastname}>
+          <h3>{`${artist.name} ${artist.lastname}`}</h3>
           <Link to="/Paintings">
-            <img src={VanGogh} alt="" className={styles.artistimage} />
+            {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
+            {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
+            {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
+            {artist.lastname === 'Monet' && <img src={Monet} alt="" className={styles.artistimage} />}
+            {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
           </Link>
           <h4>
             Paintings:
-            {artists['Van Gogh'].length}
+            {artists[artist.lastname]?.length || 0}
           </h4>
         </div>
       ))}
