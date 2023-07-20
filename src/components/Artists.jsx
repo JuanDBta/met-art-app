@@ -34,6 +34,7 @@ export default Artists;
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArtists } from '../redux/features/artists/artistsSlice';
+import VanGogh from '../images/vangogh.jpg';
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -62,16 +63,12 @@ const Artists = () => {
 
   return (
     <div>
-      <h3>Artists</h3>
-      <h2>
-        Total:
+      <h3>Vincent Van Gogh</h3>
+      <img src={VanGogh} alt="" />
+      <h4>
+        Paintings
         {total}
-      </h2>
-      <ul>
-        {artists.map((artistId) => (
-          <li key={artistId}>{artistId}</li>
-        ))}
-      </ul>
+      </h4>
     </div>
   );
 };

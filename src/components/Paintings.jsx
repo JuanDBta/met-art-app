@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 import { fetchArtistPaintings } from '../redux/features/paintings/paintingsSlice';
+import styles from '../styles/Paintings.module.css';
 
 const selectArtists = createSelector(
   (state) => state.artists.artists,
@@ -48,7 +49,7 @@ const Paintings = () => {
           <div key={obj.objectID}>
             <h1>{obj.objectID}</h1>
             <h2>{obj.title}</h2>
-            <img src={obj.primaryImage} alt={obj.title} />
+            <img src={obj.primaryImage} alt={obj.title} className={styles.img} />
             {/* Render other data properties */}
           </div>
         ))}
