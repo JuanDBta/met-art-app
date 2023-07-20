@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArtistsByName } from '../redux/features/artists/artistsSlice';
 import VanGogh from '../images/vangogh.jpg';
+import styles from '../styles/Artists.module.css';
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -37,7 +39,9 @@ const Artists = () => {
       {Object.keys(artists).map((lastName) => (
         <div key={lastName}>
           <h3>{`${lastName}`}</h3>
-          <img src={VanGogh} alt="" />
+          <Link to="/Paintings">
+            <img src={VanGogh} alt="" className={styles.artistimage} />
+          </Link>
           <h4>
             Paintings:
             {artists['Van Gogh'].length}

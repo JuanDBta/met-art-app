@@ -6,7 +6,6 @@ function NavBar() {
   return (
     <nav className="navbar">
       <li><NavLink to="/">Artists</NavLink></li>
-      <li><NavLink to="/Paintings">Paintings</NavLink></li>
       <li><NavLink to="/MyCollection">My Collection</NavLink></li>
     </nav>
   );

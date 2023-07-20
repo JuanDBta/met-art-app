@@ -91,4 +91,8 @@
     color: white;
     border: none;
   }
+
+.artistimage {
+  cursor: pointer;
+}
   

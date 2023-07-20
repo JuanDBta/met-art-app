@@ -33,7 +33,9 @@ const Paintings = () => {
 
   return (
     <div>
-      <SlActionUndo className={styles.backicon} />
+      <a href="/" className={styles.backicon}>
+        <SlActionUndo className={styles.backicon} />
+      </a>
       <h1>Artist Paintings:</h1>
       <div>
         {artistPaintings.slice(0, 5).map((obj) => (
