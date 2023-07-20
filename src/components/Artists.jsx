@@ -1,36 +1,3 @@
-/*
-import React from 'react';
-import styles from '../styles/Artists.module.css';
-
-const Artists = () => (
-  <div className={styles.rockets}>
-    <div>
-      <div className={styles.content}>
-        <h4 className={styles.name}>Pablo Picasso</h4>
-        <p className={styles.description}>
-          <button type="button" className={styles.rocketreserved}>Added</button>
-
-        </p>
-        <button
-          type="button"
-          className={styles.cancelled}
-        >
-          Remove from My Collection
-        </button>
-        <button
-          type="button"
-          className={styles.reserve}
-        >
-          Add to My Collection
-        </button>
-      </div>
-    </div>
-  </div>
-);
-
-export default Artists;
-*/
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArtistsByName } from '../redux/features/artists/artistsSlice';
@@ -73,7 +40,7 @@ const Artists = () => {
           <img src={VanGogh} alt="" />
           <h4>
             Paintings:
-            {artists[lastName].length}
+            {artists['Van Gogh'].length}
           </h4>
         </div>
       ))}
