@@ -33,7 +33,7 @@ export default Artists;
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchArtists } from '../redux/features/artists/artistsSlice';
+import { fetchArtistsByName } from '../redux/features/artists/artistsSlice';
 import VanGogh from '../images/vangogh.jpg';
 
 const Artists = () => {
@@ -43,7 +43,8 @@ const Artists = () => {
   const error = useSelector((state) => state.artists.error);
 
   useEffect(() => {
-    dispatch(fetchArtists());
+    // Aquí realizamos el fetch con el nombre y apellido
+    dispatch(fetchArtistsByName({ name: 'Vincent', lastname: 'Van Gogh' }));
   }, [dispatch]);
 
   if (isLoading) {
@@ -59,16 +60,23 @@ const Artists = () => {
     );
   }
 
-  const total = artists.length;
+  // Verificamos si artists está definido y contiene datos antes de usar Object.keys()
+  if (!artists || Object.keys(artists).length === 0) {
+    return <p>No hay artistas disponibles.</p>;
+  }
 
   return (
     <div>
-      <h3>Vincent Van Gogh</h3>
-      <img src={VanGogh} alt="" />
-      <h4>
-        Paintings
-        {total}
-      </h4>
+      {Object.keys(artists).map((lastName) => (
+        <div key={lastName}>
+          <h3>{`${lastName}`}</h3>
+          <img src={VanGogh} alt="" />
+          <h4>
+            Paintings:
+            {artists[lastName].length}
+          </h4>
+        </div>
+      ))}
     </div>
   );
 };

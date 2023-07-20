@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const fetchArtists = createAsyncThunk('artists/fetchArtists', async () => {
+export const fetchArtistsByName = createAsyncThunk('artists/fetchArtistsByName', async ({ name, lastname }) => {
   try {
-    const response = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Vincent%20VanGogh');
+    const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${name}%20${lastname}`);
     const data = await response.json();
-    return data.objectIDs;
+    return { lastname, objectIDs: data.objectIDs };
   } catch (error) {
     throw new Error('Error fetching artists');
   }
@@ -13,22 +13,23 @@ export const fetchArtists = createAsyncThunk('artists/fetchArtists', async () =>
 const artistsSlice = createSlice({
   name: 'artists',
   initialState: {
-    artists: [],
+    artists: {},
     isLoading: false,
     error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArtists.pending, (state) => {
+      .addCase(fetchArtistsByName.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchArtists.fulfilled, (state, action) => {
+      .addCase(fetchArtistsByName.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.artists = action.payload;
+        const { lastname, objectIDs } = action.payload;
+        state.artists[lastname] = objectIDs;
       })
-      .addCase(fetchArtists.rejected, (state, action) => {
+      .addCase(fetchArtistsByName.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });
