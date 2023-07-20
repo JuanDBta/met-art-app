@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { SlActionUndo } from 'react-icons/sl';
 import { fetchArtistPaintings } from '../redux/features/paintings/paintingsSlice';
 import styles from '../styles/Paintings.module.css';
 
@@ -32,6 +33,7 @@ const Paintings = () => {
 
   return (
     <div>
+      <SlActionUndo className={styles.backicon} />
       <h1>Artist Paintings:</h1>
       <div>
         {artistPaintings.slice(0, 5).map((obj) => (
