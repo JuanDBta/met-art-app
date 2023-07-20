@@ -34,11 +34,11 @@ const Paintings = () => {
     <div>
       <h1>Artist Paintings:</h1>
       <div>
-        {artistPaintings.map((obj) => (
+        {artistPaintings.slice(0, 5).map((obj) => (
           <div key={obj.objectID}>
             <h1>{obj.objectID}</h1>
             <h2>{obj.title}</h2>
-            <img src={obj.primaryImage} alt={obj.title} className={styles.size} />
+            <img src={obj.primaryImage} alt={obj.title} className={styles.images} />
             {/* Render other data properties */}
           </div>
         ))}

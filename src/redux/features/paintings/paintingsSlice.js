@@ -33,7 +33,6 @@ const paintingsSlice = createSlice({
         const existingIdsSet = new Set(state.artistPaintings.map((painting) => painting.objectID));
         const filteredPaintings = [newPaintings].flat().filter((painting) => !existingIdsSet.has(painting.objectID)); //eslint-disable-line
         state.artistPaintings.push(...filteredPaintings);
-        state.artistPaintings.sort((a, b) => a.objectID - b.objectID);
       })
       .addCase(fetchArtistPaintings.rejected, (state, action) => {
         state.isLoading = false;
