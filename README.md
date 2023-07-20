@@ -2,7 +2,7 @@
 
 <div align="center">
  
-  <img src="src\logo.svg" alt="logo" width="200"  height="auto">
+  <img src="src/images/vangogh.jpg" alt="logo" width="200"  height="auto">
   <br/>
 
   <h3><b>MET Art App</b></h3>
