@@ -28,7 +28,6 @@ describe('artistsSlice', () => {
   });
 
   it('should handle errors when fetching artists', async () => {
-   
     await store.dispatch(fetchArtistsByName({ lastname: 'InvalidArtist' }));
 
     const state = store.getState().artists;
@@ -38,7 +37,6 @@ describe('artistsSlice', () => {
   });
 
   it('should reset artists to initial state', () => {
-    
     store.dispatch(resetArtists());
 
     const state = store.getState().artists;
