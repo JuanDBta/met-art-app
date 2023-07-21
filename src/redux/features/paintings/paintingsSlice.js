@@ -1,9 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-// Agrega aquí las importaciones necesarias para el slice paintings
-// import { fetchArtistPaintings } from '../path-to-fetchArtistPaintings';
-// ...
-
 export const fetchArtistPaintings = createAsyncThunk('data/fetchArtistsPainitngs', async ({ lastname, objectId }) => {
   try {
     const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);

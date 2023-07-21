@@ -11,10 +11,14 @@ describe('MyCollection Component', () => {
     paintings: {
       data: {
         VanGogh: [
-          { objectID: 1, title: 'Starry Night', primaryImage: 'starry-night.jpg', isSelected: true },
+          {
+            objectID: 1, title: 'Starry Night', primaryImage: 'starry-night.jpg', isSelected: true,
+          },
         ],
         Monet: [
-          { objectID: 2, title: 'Water Lilies', primaryImage: 'water-lilies.jpg', isSelected: true },
+          {
+            objectID: 2, title: 'Water Lilies', primaryImage: 'water-lilies.jpg', isSelected: true,
+          },
         ],
       },
     },
@@ -26,7 +30,7 @@ describe('MyCollection Component', () => {
     render(
       <Provider store={store}>
         <MyCollection />
-      </Provider>
+      </Provider>,
     );
   });
 

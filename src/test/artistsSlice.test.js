@@ -33,7 +33,7 @@ describe('artistsSlice', () => {
 
     // Check if the state reflects the error
     const state = store.getState().artists;
-    expect(state.artists['InvalidArtist']).toBeUndefined();
+    expect(state.artists.InvalidArtist).toBeUndefined();
     expect(state.isLoading).toBe(false);
     expect(state.error).toBe('Error fetching artists');
   });

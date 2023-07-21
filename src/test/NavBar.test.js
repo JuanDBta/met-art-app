@@ -8,7 +8,7 @@ test('renders NavBar component without errors', () => {
   render(
     <BrowserRouter>
       <NavBar />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   const artistsLink = screen.getByText(/Artists/i);
