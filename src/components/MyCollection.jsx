@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelected } from '../redux/features/paintings/paintingsSlice';
 import styles from '../styles/MyCollection.module.css';
@@ -17,8 +17,10 @@ function MyCollection() {
     return selected;
   });
 
+  // Utilizamos useMemo para memoizar el resultado del selector
+  const memoizedSelectedPaintings = useMemo(() => selectedPaintings, [selectedPaintings]);
+
   const handleRemovePainting = (lastname, objectId) => {
-    // Cambiar el estado isSelected a false cuando se hace clic en el botón "Remove"
     dispatch(setSelected({ objectId, isSelected: false }));
     // Y cualquier otra lógica que desees realizar al quitar una pintura de MyCollection
     // ...
@@ -28,7 +30,7 @@ function MyCollection() {
     <section className={styles.collectioncontainer}>
       <div className={styles.paintings}>
         <h2 className={styles.paintingstitle}>My Paintings</h2>
-        {selectedPaintings.map((artist) => (
+        {memoizedSelectedPaintings.map((artist) => (
           <div key={artist.lastname}>
             <ul className={styles.paintingslist}>
               {artist.paintings.map((painting) => (
