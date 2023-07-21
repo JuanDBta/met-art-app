@@ -9,3 +9,14 @@
   height: auto;
   cursor: pointer;
 }
+
+.paintingscontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 0.5vw;
+  }

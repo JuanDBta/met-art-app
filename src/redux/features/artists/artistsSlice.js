@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const fetchArtistsByName = createAsyncThunk('artists/fetchArtistsByName', async ({ name, lastname }) => {
+export const fetchArtistsByName = createAsyncThunk('artists/fetchArtistsByName', async ({ lastname }) => {
   try {
-    const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${name}%20${lastname}`);
+    const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${lastname}&hasImages=true&isHighlight=true&`);
     const data = await response.json();
     return { lastname, objectIDs: data.objectIDs };
   } catch (error) {

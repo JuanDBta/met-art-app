@@ -19,7 +19,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Artists />} />
-        <Route path="/Paintings" element={<Paintings />} />
+        <Route path="/Paintings/:artistLastName" element={<Paintings />} />
         <Route path="/MyCollection" element={<MyCollection />} />
       </Routes>
     </>

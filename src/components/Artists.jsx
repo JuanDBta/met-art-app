@@ -18,7 +18,7 @@ const Artists = () => {
 
   useEffect(() => {
     selectedArtists.forEach((artist) => {
-      dispatch(fetchArtistsByName({ name: artist.name, lastname: artist.lastname }));
+      dispatch(fetchArtistsByName({ lastname: artist.lastname }));
     });
   }, [dispatch]);
 
@@ -36,11 +36,11 @@ const Artists = () => {
   }
 
   return (
-    <div>
+    <div className={styles.artistscontainer}>
       {selectedArtists.map((artist) => (
         <div key={artist.lastname}>
           <h3>{`${artist.name} ${artist.lastname}`}</h3>
-          <Link to="/Paintings">
+          <Link to={`/paintings/${artist.lastname}`}>
             {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
             {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
             {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}

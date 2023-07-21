@@ -96,3 +96,10 @@
   cursor: pointer;
   width: 10vw;
 }
+
+.artistscontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

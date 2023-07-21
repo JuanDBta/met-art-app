@@ -1,22 +1,19 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const fetchArtistPaintings = createAsyncThunk(
-  'data/fetchArtistData',
-  async (objectId) => {
-    try {
-      const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);
-      const paintings = await response.json();
-      return paintings;
-    } catch (error) {
-      throw new Error('Error fetching artist paintings');
-    }
-  },
-);
+export const fetchArtistPaintings = createAsyncThunk('data/fetchArtistsPainitngs', async ({ lastname, objectId }) => {
+  try {
+    const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);
+    const data = await response.json();
+    return { lastname, ...data }; // Incluimos el lastname como parte del objeto devuelto
+  } catch (error) {
+    throw new Error('Error fetching user data');
+  }
+});
 
 const paintingsSlice = createSlice({
   name: 'paintings',
   initialState: {
-    artistPaintings: [],
+    data: {}, // Usamos un objeto para asociar los lastname con los detalles de las pinturas
     isLoading: false,
     error: null,
   },
@@ -29,10 +26,14 @@ const paintingsSlice = createSlice({
       })
       .addCase(fetchArtistPaintings.fulfilled, (state, action) => {
         state.isLoading = false;
-        const newPaintings = action.payload;
-        const existingIdsSet = new Set(state.artistPaintings.map((painting) => painting.objectID));
-        const filteredPaintings = [newPaintings].flat().filter((painting) => !existingIdsSet.has(painting.objectID)); //eslint-disable-line
-        state.artistPaintings.push(...filteredPaintings);
+        const newData = action.payload;
+        const existingIdsSet = new Set(state.data[newData.lastname]?.map((data) => data.objectID));
+        const filteredData = [newData].flat().filter((data) => !existingIdsSet.has(data.objectID));
+
+        if (!state.data[newData.lastname]) {
+          state.data[newData.lastname] = [];
+        }
+        state.data[newData.lastname].push(...filteredData);
       })
       .addCase(fetchArtistPaintings.rejected, (state, action) => {
         state.isLoading = false;
