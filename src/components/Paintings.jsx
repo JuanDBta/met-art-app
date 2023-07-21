@@ -56,9 +56,13 @@ const Paintings = () => {
         {artistPaintings.slice(0, 20).map((painting) => (
           <div key={painting.objectID}>
             <h1>{painting.objectID}</h1>
-            <h2>{painting.title}</h2>
+            <h2>
+              {painting.title}
+              {painting.isSelected && (
+              <button type="button" className={styles.paintingselected}>Selected</button>
+              )}
+            </h2>
             <img src={painting.primaryImage} alt={painting.title} className={styles.images} />
-            {/* Botón para cambiar el estado isSelected de la pintura */}
             {painting.isSelected ? (
               <button
                 type="button"
