@@ -28,10 +28,9 @@ describe('artistsSlice', () => {
   });
 
   it('should handle errors when fetching artists', async () => {
-    // Dispatch the fetchArtistsByName action with an invalid artist name
+   
     await store.dispatch(fetchArtistsByName({ lastname: 'InvalidArtist' }));
 
-    // Check if the state reflects the error
     const state = store.getState().artists;
     expect(state.artists.InvalidArtist).toBeUndefined();
     expect(state.isLoading).toBe(false);
@@ -39,10 +38,9 @@ describe('artistsSlice', () => {
   });
 
   it('should reset artists to initial state', () => {
-    // Dispatch the resetArtists action
+    
     store.dispatch(resetArtists());
 
-    // Check if the state is reset to initial values
     const state = store.getState().artists;
     expect(state.artists).toEqual({});
     expect(state.isLoading).toBe(false);

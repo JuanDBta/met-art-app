@@ -30,7 +30,7 @@ describe('Artists Component', () => {
   });
 
   it('should render Artists component without errors', () => {
-    const { queryByText } = render( // Use queryByText instead of getByText
+    const { queryByText } = render( 
       <Provider store={store}>
         <Router>
           <Artists />
@@ -38,7 +38,7 @@ describe('Artists Component', () => {
       </Provider>,
     );
 
-    const loadingText = queryByText(/Loading/i); // Use queryByText with a regex
-    expect(loadingText).toBeNull(); // Expect the element to be null since it should not be found
+    const loadingText = queryByText(/Loading/i);
+    expect(loadingText).toBeNull(); 
   });
 });
