@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { SlActionUndo } from 'react-icons/sl';
-import { fetchArtistPaintings } from '../redux/features/paintings/paintingsSlice';
+import { fetchArtistPaintings, setSelected } from '../redux/features/paintings/paintingsSlice';
 import styles from '../styles/Paintings.module.css';
 
 const Paintings = () => {
@@ -22,6 +22,13 @@ const Paintings = () => {
       }
     }
   }, [dispatch, artistPaintings, objectIDs, artistLastName]);
+
+  const handleSelectPainting = (objectId, isSelected) => {
+    // Invertir el valor de isSelected (seleccionado o no seleccionado)
+    const newIsSelected = !isSelected;
+    dispatch(setSelected({ objectId, isSelected: newIsSelected }));
+  };
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -51,7 +58,24 @@ const Paintings = () => {
             <h1>{painting.objectID}</h1>
             <h2>{painting.title}</h2>
             <img src={painting.primaryImage} alt={painting.title} className={styles.images} />
-            {/* Render other data properties */}
+            {/* Botón para cambiar el estado isSelected de la pintura */}
+            {painting.isSelected ? (
+              <button
+                type="button"
+                className={styles.removed}
+                onClick={() => handleSelectPainting(painting.objectID, painting.isSelected)}
+              >
+                Remove from My Collection
+              </button>
+            ) : (
+              <button
+                type="button"
+                className={styles.selected}
+                onClick={() => handleSelectPainting(painting.objectID, painting.isSelected)}
+              >
+                Add to My Collection
+              </button>
+            )}
           </div>
         ))}
       </div>

@@ -4,7 +4,7 @@ export const fetchArtistPaintings = createAsyncThunk('data/fetchArtistsPainitngs
   try {
     const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);
     const data = await response.json();
-    return { lastname, ...data }; // Incluimos el lastname como parte del objeto devuelto
+    return { lastname, ...data, isSelected: false };
   } catch (error) {
     throw new Error('Error fetching user data');
   }
@@ -13,11 +13,16 @@ export const fetchArtistPaintings = createAsyncThunk('data/fetchArtistsPainitngs
 const paintingsSlice = createSlice({
   name: 'paintings',
   initialState: {
-    data: {}, // Usamos un objeto para asociar los lastname con los detalles de las pinturas
+    data: {},
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    setSelected: (state, action) => {
+      const { objectId, isSelected } = action.payload;
+      state.data[objectId].isSelected = isSelected;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchArtistPaintings.pending, (state) => {
@@ -41,5 +46,7 @@ const paintingsSlice = createSlice({
       });
   },
 });
+
+export const { setSelected } = paintingsSlice.actions;
 
 export default paintingsSlice.reducer;
