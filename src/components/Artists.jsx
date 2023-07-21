@@ -7,7 +7,7 @@ import styles from '../styles/Artists.module.css';
 import VanGogh from '../images/vangogh.jpg';
 import Renoir from '../images/Pierre-auguste-Renoir-Self-Portrait-2-.jpeg';
 import Klimt from '../images/el-beso-klimt.jpg';
-import Monet from '../images/Claude_Monet_-_Self_Portrait_with_a_Beret_-_1886-665x800.jpg';
+import Degas from '../images/degas.jpg';
 import Cezanne from '../images/selbstbildnis_cezanne_E.jpg';
 
 const Artists = () => {
@@ -44,7 +44,7 @@ const Artists = () => {
             {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
             {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
             {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
-            {artist.lastname === 'Monet' && <img src={Monet} alt="" className={styles.artistimage} />}
+            {artist.lastname === 'Degas' && <img src={Degas} alt="" className={styles.artistimage} />}
             {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
           </Link>
           <h4>

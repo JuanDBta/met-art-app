@@ -1,10 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import selectedArtists from '../../../components/selectedArtists';
 
 export const fetchArtistsByName = createAsyncThunk('artists/fetchArtistsByName', async ({ lastname }) => {
   try {
-    const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${lastname}&hasImages=true&isHighlight=true&`);
-    const data = await response.json();
-    return { lastname, objectIDs: data.objectIDs };
+    const artistData = selectedArtists.find((artist) => artist.lastname === lastname);
+    if (artistData) {
+      const response = await fetch(artistData.url);
+      const data = await response.json();
+      return { lastname, objectIDs: data.objectIDs };
+    }
+    throw new Error('Artist not found in selectedArtists');
   } catch (error) {
     throw new Error('Error fetching artists');
   }
@@ -17,7 +22,13 @@ const artistsSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    resetArtists: (state) => {
+      state.artists = {};
+      state.isLoading = false;
+      state.error = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchArtistsByName.pending, (state) => {
@@ -36,4 +47,5 @@ const artistsSlice = createSlice({
   },
 });
 
+export const { resetArtists } = artistsSlice.actions;
 export default artistsSlice.reducer;
