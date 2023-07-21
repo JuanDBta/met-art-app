@@ -79,7 +79,7 @@ Coming soon!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[MET Art App](https://spacex-4e71.onrender.com/)
+[MET Art App](https://met-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,7 +131,7 @@ npm run test
 
 ### Deployment
 
-You can deploy this project using:<br>[MET Art App](https://spacex-4e71.onrender.com/)
+You can deploy this project using:<br>[MET Art App](https://met-app.onrender.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
