@@ -1,5 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+// Agrega aquí las importaciones necesarias para el slice paintings
+// import { fetchArtistPaintings } from '../path-to-fetchArtistPaintings';
+// ...
+
 export const fetchArtistPaintings = createAsyncThunk('data/fetchArtistsPainitngs', async ({ lastname, objectId }) => {
   try {
     const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);
@@ -20,7 +24,12 @@ const paintingsSlice = createSlice({
   reducers: {
     setSelected: (state, action) => {
       const { objectId, isSelected } = action.payload;
-      state.data[objectId].isSelected = isSelected;
+      const artistLastname = Object.keys(state.data).find((lastname) => state.data[lastname].some((painting) => painting.objectID === objectId));//eslint-disable-line
+
+      if (artistLastname) {
+        const painting = state.data[artistLastname].find((painting) => painting.objectID === objectId);//eslint-disable-line
+        painting.isSelected = isSelected;
+      }
     },
   },
   extraReducers: (builder) => {
@@ -38,7 +47,10 @@ const paintingsSlice = createSlice({
         if (!state.data[newData.lastname]) {
           state.data[newData.lastname] = [];
         }
-        state.data[newData.lastname].push(...filteredData);
+
+        filteredData.forEach((data) => {
+          state.data[newData.lastname].push({ ...data, isSelected: false });
+        });
       })
       .addCase(fetchArtistPaintings.rejected, (state, action) => {
         state.isLoading = false;
@@ -47,6 +59,7 @@ const paintingsSlice = createSlice({
   },
 });
 
+// Exporta la acción setSelected
 export const { setSelected } = paintingsSlice.actions;
 
 export default paintingsSlice.reducer;
