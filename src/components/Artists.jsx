@@ -52,7 +52,7 @@ const Artists = () => {
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="search by artist last name..."
+        placeholder="search artist by name..."
         className={styles.search}
       />
       <div className={styles.artistsection}>
