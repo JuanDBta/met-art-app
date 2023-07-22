@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CiMicrophoneOn, CiSettings } from 'react-icons/ci';
@@ -17,6 +17,8 @@ const Artists = () => {
   const artists = useSelector((state) => state.artists.artists);
   const isLoading = useSelector((state) => state.artists.isLoading);
   const error = useSelector((state) => state.artists.error);
+
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     selectedArtists.forEach((artist) => {
@@ -37,6 +39,8 @@ const Artists = () => {
     );
   }
 
+  const filteredArtists = selectedArtists.filter((artist) => artist.lastname.toLowerCase().includes(searchTerm.toLowerCase()));//eslint-disable-line
+
   return (
     <div className={styles.artistscontainer}>
       <header>
@@ -44,9 +48,16 @@ const Artists = () => {
         <CiMicrophoneOn className={styles.mic} />
         <CiSettings className={styles.settings} />
       </header>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="search by artist last name..."
+        className={styles.search}
+      />
       <div className={styles.artistsection}>
         <div className={styles.gridContainer}>
-          {selectedArtists.map((artist) => (
+          {filteredArtists.map((artist) => (
             <div key={artist.lastname} className={styles.artistsquare}>
               <Link to={`/paintings/${artist.lastname}`} className={styles.artistcard}>
                 {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
