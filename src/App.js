@@ -21,7 +21,7 @@ function App() {
           <img src={Logo} className="App-logo" alt="logo" />
           <h1 className="title gill">MET</h1>
         </div>
-        <NavBar />
+        <NavBar className="bar" />
         <CiBluetooth className="bluetooth" />
         <p className="level">100%</p>
         <CiBatteryFull className="battery" />
