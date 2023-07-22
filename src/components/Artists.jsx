@@ -10,6 +10,7 @@ import Renoir from '../images/Pierre-auguste-Renoir-Self-Portrait-2-.jpeg';
 import Klimt from '../images/el-beso-klimt.jpg';
 import Degas from '../images/degas.jpg';
 import Cezanne from '../images/selbstbildnis_cezanne_E.jpg';
+import Gauguin from '../images/Paul_Gauguin_111.jpg';
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -53,6 +54,7 @@ const Artists = () => {
                 {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
                 {artist.lastname === 'Degas' && <img src={Degas} alt="" className={styles.artistimage} />}
                 {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
+                {artist.lastname === 'Gauguin' && <img src={Gauguin} alt="" className={styles.artistimage} />}
               </Link>
               <div className={styles.artistinfo}>
                 <h3 className={styles.artistname}>{`${artist.name} ${artist.lastname}`}</h3>

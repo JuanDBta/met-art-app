@@ -24,6 +24,11 @@ const selectedArtists = [
     lastname: 'Cezanne',
     url: 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Paul%20Cezanne',
   },
+  {
+    name: 'Paul',
+    lastname: 'Gauguin',
+    url: 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Paul%20Gauguin',
+  },
 ];
 
 export default selectedArtists;
