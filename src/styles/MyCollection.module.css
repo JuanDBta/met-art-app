@@ -50,3 +50,8 @@
   width: 10vw;
   height: auto;
 }
+
+.paintingstitle {
+  font-family: 'Gill Sans', sans-serif;
+  color: rgb(233, 210, 210);
+}

@@ -37,22 +37,27 @@ const Artists = () => {
 
   return (
     <div className={styles.artistscontainer}>
-      {selectedArtists.map((artist) => (
-        <div key={artist.lastname}>
-          <h3>{`${artist.name} ${artist.lastname}`}</h3>
-          <Link to={`/paintings/${artist.lastname}`}>
-            {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
-            {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
-            {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
-            {artist.lastname === 'Degas' && <img src={Degas} alt="" className={styles.artistimage} />}
-            {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
-          </Link>
-          <h4>
-            Paintings:
-            {artists[artist.lastname]?.length || 0}
-          </h4>
-        </div>
-      ))}
+      <h2 className={styles.pagetitle}>top artists nineteenth century</h2>
+      <div className={styles.artistsection}>
+        {selectedArtists.map((artist) => (
+          <div key={artist.lastname} className={styles.artistsquare}>
+            <Link to={`/paintings/${artist.lastname}`} className={styles.artistcard}>
+              {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
+              {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
+              {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
+              {artist.lastname === 'Degas' && <img src={Degas} alt="" className={styles.artistimage} />}
+              {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
+            </Link>
+            <div className={styles.artistinfo}>
+              <h3 className={styles.artistname}>{`${artist.name} ${artist.lastname}`}</h3>
+              <h4 className={styles.statsnumber}>
+                {artists[artist.lastname]?.length || 0}
+                <p className={styles.stats}>paintings</p>
+              </h4>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

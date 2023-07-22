@@ -17,13 +17,10 @@ function MyCollection() {
     return selected;
   });
 
-  // Utilizamos useMemo para memoizar el resultado del selector
   const memoizedSelectedPaintings = useMemo(() => selectedPaintings, [selectedPaintings]);
 
   const handleRemovePainting = (lastname, objectId) => {
     dispatch(setSelected({ objectId, isSelected: false }));
-    // Y cualquier otra lógica que desees realizar al quitar una pintura de MyCollection
-    // ...
   };
 
   return (
@@ -35,8 +32,8 @@ function MyCollection() {
             <ul className={styles.paintingslist}>
               {artist.paintings.map((painting) => (
                 <li key={painting.objectID}>
-                  <h3>{artist.lastname}</h3>
-                  <h4>{painting.title}</h4>
+                  <h3 className="gill">{artist.lastname}</h3>
+                  <h4 className="gill">{painting.title}</h4>
                   <img
                     src={painting.primaryImage}
                     alt={painting.title}
