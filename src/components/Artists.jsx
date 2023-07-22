@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { CiMicrophoneOn, CiSettings } from 'react-icons/ci';
 import { fetchArtistsByName } from '../redux/features/artists/artistsSlice';
 import selectedArtists from './selectedArtists';
 import styles from '../styles/Artists.module.css';
@@ -37,7 +38,11 @@ const Artists = () => {
 
   return (
     <div className={styles.artistscontainer}>
-      <h2 className={styles.pagetitle}>top artists nineteenth century</h2>
+      <header>
+        <h2 className={styles.pagetitle}>top artists nineteenth century</h2>
+        <CiMicrophoneOn className={styles.mic} />
+        <CiSettings className={styles.settings} />
+      </header>
       <div className={styles.artistsection}>
         {selectedArtists.map((artist) => (
           <div key={artist.lastname} className={styles.artistsquare}>
