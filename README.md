@@ -9,8 +9,6 @@
 
 </div>
 
-
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -36,7 +34,7 @@
 
 # 📖 MET Art App <a name="about-project"></a>
 
-**[MET Art App]** This Mobile App connects the user with the Metropolitan Art Museum of New York API in order to search your favorite artists and display its paintings. Built with REACT & REDUX, is my Capstone Project for Module 3.
+**[MET Art App]** This Mobile App connects the user with the Metropolitan Art Museum of New York API and display NINETEENTH CENTURY TOP ARTISTS.  When you click an artists image you can access to all their paintings available in MET with main details like title, year of creation and medium. My Collection is an additional feature that allows you to select your favorite paintings and store it. Built with REACT & REDUX, is my Capstone Project for Module 3. You can check the MET APi in this URL https://metmuseum.github.io/#search.
 
 ## 🛠 Built With <a name="built-with"></a>
 1- REACT<br>
@@ -73,7 +71,7 @@
 
 ## 🚀 Video Intro <a name="video-intro"></a>
 
-Coming soon!
+[Video Intro](https://www.loom.com/share/68946f697e514b6586c6972875eec606?sid=fd795b60-2916-453e-9615-b9fb5c4a89c8/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,6 +167,10 @@ If you like this project, please give me a like, it doesn't cost you anything an
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Bee in Student Success who is always avalaible to solve issues and Microverse for push us to work hard every day!
+
+The Crypto-Pro template was created by Nelson Sakwa and is used under the CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). Changes have been made to the original template.
+
+Original Template: https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
