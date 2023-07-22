@@ -142,3 +142,13 @@ header {
   text-align: left;
   margin-left: 3vw;
 }
+
+.artistsquare:nth-child(even) {
+  background-color: #e43f7e;
+  border-bottom: 0.3vw #e97ba5 solid;
+}
+
+.artistsquare:nth-child(odd) {
+  background-color: #ec4c8a;
+  border-bottom: 0.3vw #e97ba5 solid;
+}
