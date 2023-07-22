@@ -1,14 +1,19 @@
 nav .active {
   text-decoration: underline;
+  color: rgb(233, 210, 210);
 }
 
 li {
   list-style-type: none;
-  color: black;
+  color: rgb(233, 210, 210);
 }
 
 li a {
   text-decoration: none;
+  color: rgb(233, 210, 210);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 3vw;
 }
 
 nav {
@@ -17,6 +22,11 @@ nav {
 }
 
 .artists {
-  border-right: 2px black solid;
+  border-right: 0.5vw rgb(233, 210, 210) solid;
   padding-right: 1vw;
+  color: rgb(233, 210, 210);
+}
+
+.collection {
+  color: rgb(233, 210, 210);
 }

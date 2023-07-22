@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { CiMicrophoneOn, CiSettings } from 'react-icons/ci';
 import { setSelected } from '../redux/features/paintings/paintingsSlice';
 import styles from '../styles/MyCollection.module.css';
 
@@ -17,26 +18,27 @@ function MyCollection() {
     return selected;
   });
 
-  // Utilizamos useMemo para memoizar el resultado del selector
   const memoizedSelectedPaintings = useMemo(() => selectedPaintings, [selectedPaintings]);
 
   const handleRemovePainting = (lastname, objectId) => {
     dispatch(setSelected({ objectId, isSelected: false }));
-    // Y cualquier otra lógica que desees realizar al quitar una pintura de MyCollection
-    // ...
   };
 
   return (
     <section className={styles.collectioncontainer}>
+      <header className={styles.headercollection}>
+        <h2 className={styles.paintingstitle}>my paintings</h2>
+        <CiMicrophoneOn className={styles.mic} />
+        <CiSettings className={styles.settings} />
+      </header>
       <div className={styles.paintings}>
-        <h2 className={styles.paintingstitle}>My Paintings</h2>
         {memoizedSelectedPaintings.map((artist) => (
           <div key={artist.lastname}>
             <ul className={styles.paintingslist}>
               {artist.paintings.map((painting) => (
-                <li key={painting.objectID}>
-                  <h3>{artist.lastname}</h3>
-                  <h4>{painting.title}</h4>
+                <li key={painting.objectID} className={styles.paintingscollection}>
+                  <h3 className={styles.name}>{artist.lastname}</h3>
+                  <h4 className={styles.title}>{painting.title}</h4>
                   <img
                     src={painting.primaryImage}
                     alt={painting.title}

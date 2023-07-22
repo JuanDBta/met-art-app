@@ -5,8 +5,8 @@ import '../styles/NavBar.module.css';
 function NavBar() {
   return (
     <nav className="navbar">
-      <li><NavLink to="/">Artists</NavLink></li>
-      <li><NavLink to="/MyCollection">My Collection</NavLink></li>
+      <li className="artists"><NavLink to="/">artists</NavLink></li>
+      <li className="collection"><NavLink to="/MyCollection">myCollection</NavLink></li>
     </nav>
   );
 }

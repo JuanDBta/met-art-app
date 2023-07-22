@@ -3,10 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 10vw;
+  background-color: #e43f7e;
 }
 
 .App-logo {
   height: 3.5vw;
+  margin-left: 1vw;
 }
 
 .logo-title {
@@ -14,15 +17,16 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 2vw;
+  margin-left: 1vw;
 }
 
 .title {
-  margin-left: 2vw;
+  font-size: 3vw;
+  color: rgb(233, 210, 210);
 }
 
 .navbar {
-  margin-right: 2vw;
+  margin-right: 3vw;
 }
 
 .rockets-container {
@@ -48,6 +52,42 @@ nav {
 }
 
 .artists {
-  border-right: 2px black solid;
-  padding-right: 1vw;
+  border-right: 2px rgb(233, 210, 210) solid;
+  padding-right: 2vw;
+}
+
+.signal {
+  color: rgb(233, 210, 210);
+  font-size: 2vw;
+  font-weight: 300;
+  margin-left: 0.5vw;
+}
+
+.icon3 {
+  width: 3vw;
+  height: auto;
+  margin-left: 0.5vw;
+}
+
+.battery {
+  width: 4vw;
+  height: auto;
+  margin-right: 2vw;
+}
+
+.level {
+  color: rgb(233, 210, 210);
+  font-size: 2.5vw;
+  font-weight: 600;
+  margin-right: -8vw;
+}
+
+.bluetooth {
+  width: 3vw;
+  height: auto;
+  margin-right: -8vw;
+}
+
+.bar {
+  margin-right: -3vw;
 }

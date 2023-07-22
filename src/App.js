@@ -13,9 +13,9 @@ function App() {
       <header className="App-header">
         <div className="logo-title">
           <img src={Logo} className="App-logo" alt="logo" />
-          <h1 className="title">MET TOP TEN ARTISTS</h1>
+          <h1 className="title gill">MET</h1>
         </div>
-        <NavBar />
+        <NavBar className="bar" />
       </header>
       <Routes>
         <Route path="/" element={<Artists />} />

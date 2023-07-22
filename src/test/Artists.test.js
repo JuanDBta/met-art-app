@@ -30,7 +30,7 @@ describe('Artists Component', () => {
   });
 
   it('should render Artists component without errors', () => {
-    const { queryByText } = render( 
+    const { queryByText } = render(
       <Provider store={store}>
         <Router>
           <Artists />
@@ -39,6 +39,6 @@ describe('Artists Component', () => {
     );
 
     const loadingText = queryByText(/Loading/i);
-    expect(loadingText).toBeNull(); 
+    expect(loadingText).toBeNull();
   });
 });
