@@ -52,6 +52,7 @@ header {
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  width: 100vw;
 }
 
 .artistimage {
@@ -70,7 +71,7 @@ header {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-left: 17vw;
+  margin-left: 15vw;
 }
 
 .artistname {
@@ -105,7 +106,7 @@ header {
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
