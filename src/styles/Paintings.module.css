@@ -13,6 +13,13 @@
   align-items: center;
 }
 
+.paintingcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .paintingcard:nth-child(even) {
   background-color: #e43f7e;
   border-bottom: 0.3vw #e97ba5 solid;
@@ -136,12 +143,3 @@
   border: 1px rgb(184, 175, 175) solid;
   font-family: 'Lato', sans-serif;
 }
-
-.paintingcard {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-
