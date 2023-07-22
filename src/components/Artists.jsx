@@ -44,24 +44,26 @@ const Artists = () => {
         <CiSettings className={styles.settings} />
       </header>
       <div className={styles.artistsection}>
-        {selectedArtists.map((artist) => (
-          <div key={artist.lastname} className={styles.artistsquare}>
-            <Link to={`/paintings/${artist.lastname}`} className={styles.artistcard}>
-              {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
-              {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
-              {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
-              {artist.lastname === 'Degas' && <img src={Degas} alt="" className={styles.artistimage} />}
-              {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
-            </Link>
-            <div className={styles.artistinfo}>
-              <h3 className={styles.artistname}>{`${artist.name} ${artist.lastname}`}</h3>
-              <h4 className={styles.statsnumber}>
-                {artists[artist.lastname]?.length || 0}
-                <p className={styles.stats}>paintings</p>
-              </h4>
+        <div className={styles.gridContainer}>
+          {selectedArtists.map((artist) => (
+            <div key={artist.lastname} className={styles.artistsquare}>
+              <Link to={`/paintings/${artist.lastname}`} className={styles.artistcard}>
+                {artist.lastname === 'Van Gogh' && <img src={VanGogh} alt="" className={styles.artistimage} />}
+                {artist.lastname === 'Renoir' && <img src={Renoir} alt="" className={styles.artistimage} />}
+                {artist.lastname === 'Klimt' && <img src={Klimt} alt="" className={styles.artistimage} />}
+                {artist.lastname === 'Degas' && <img src={Degas} alt="" className={styles.artistimage} />}
+                {artist.lastname === 'Cezanne' && <img src={Cezanne} alt="" className={styles.artistimage} />}
+              </Link>
+              <div className={styles.artistinfo}>
+                <h3 className={styles.artistname}>{`${artist.name} ${artist.lastname}`}</h3>
+                <h4 className={styles.statsnumber}>
+                  {artists[artist.lastname]?.length || 0}
+                  <p className={styles.stats}>paintings</p>
+                </h4>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

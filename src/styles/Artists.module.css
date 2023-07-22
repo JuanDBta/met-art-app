@@ -49,6 +49,11 @@ header {
   width: 60vw;
 }
 
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .artistimage {
   width: 35vw;
   height: auto;
@@ -95,16 +100,6 @@ header {
   margin-left: 3vw;
 }
 
-.artistsquare:nth-child(even) {
-  background-color: #e43f7e;
-  border-bottom: 0.3vw #e97ba5 solid;
-}
-
-.artistsquare:nth-child(odd) {
-  background-color: #ec4c8a;
-  border-bottom: 0.3vw #e97ba5 solid;
-}
-
 .artistsquare {
   width: 50vw;
   height: auto;
@@ -112,4 +107,18 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.artistsquare:nth-child(1),
+.artistsquare:nth-child(4),
+.artistsquare:nth-child(5) {
+  background-color: #e43f7e;
+  border-bottom: 0.3vw #e97ba5 solid;
+}
+
+.artistsquare:nth-child(2),
+.artistsquare:nth-child(3),
+.artistsquare:nth-child(6) {
+  background-color: #ec4c8a;
+  border-bottom: 0.3vw #e97ba5 solid;
 }
