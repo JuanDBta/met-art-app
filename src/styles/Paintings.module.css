@@ -7,6 +7,10 @@
 .info {
   width: 50vw;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .paintingcard:nth-child(even) {
@@ -18,7 +22,6 @@
   background-color: #ec4c8a;
   border-bottom: 0.3vw #e97ba5 solid;
 }
-
 
 .backicon {
   width: 6vw;
@@ -77,6 +80,8 @@
 .date {
   color: white;
   font-family: 'Lato', sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
 }
 
 .paintingselected {
@@ -84,13 +89,13 @@
   color: white;
   font-family: 'Lato', sans-serif;
   background-color: rgb(30, 221, 30);
-  width: 4vw;
+  width: 5vw;
   height: 1.5vw;
   margin-right: 0.5vw;
   border: none;
   border-radius: 4px;
-  font-size: 0.8vw;
-  margin-top: 0.2vw;
+  font-size: 1vw;
+  margin-top: 0.6vw;
   float: left;
 }
 
