@@ -29,6 +29,16 @@ const selectedArtists = [
     lastname: 'Gauguin',
     url: 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Paul%20Gauguin',
   },
+  {
+    name: 'George',
+    lastname: 'Seurat',
+    url: 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=George%20Seurat',
+  },
+  {
+    name: 'Henri',
+    lastname: 'Toulouse-Lautrec',
+    url: 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Henri%20Toulouse-Lautrec',
+  },
 ];
 
 export default selectedArtists;

@@ -1,65 +1,65 @@
 header {
-    width: 100vw;
-    height: 6vw;
-    border-bottom: 0.3vw #e97ba5 solid;
-    background-color: #e43f7e;
-    margin-top: -0.3vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  
-  .mic {
-    width: 3vw;
-    height: auto;
-    margin-top: -3vw;
-    margin-left: 3cqb;
-    padding-left: 6vw;
-    padding-right: 2vw;
-  }
-  
-  .settings {
-    width: 3vw;
-    height: auto;
-    margin-top: -3vw;
-    margin-right: 2vw;
-  }
+  width: 100vw;
+  height: 6vw;
+  border-bottom: 0.3vw #e97ba5 solid;
+  background-color: #e43f7e;
+  margin-top: -0.3vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 
-  .pagetitle {
-    color: rgb(233, 210, 210);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    font-size: 4vw;
-    margin-left: 20vw;
-    margin-top: -1.5vw;
-    width: 60vw;
-  }
+.mic {
+  width: 3vw;
+  height: auto;
+  margin-top: -3vw;
+  margin-left: 3vw;
+  padding-left: 6vw;
+  padding-right: 2vw;
+}
 
-  .intro {
-    width: 80vw;
-    height: 16vw;
-    border: 2px #e97ba5 solid;
-    box-shadow: 2px 3px 5px 2px #e97ba5;
-    background-color: #e43f7e;
-    margin-top: 6vw;
-    margin-left: 8vw;
-    padding: 2vw;
-  }
+.settings {
+  width: 3vw;
+  height: auto;
+  margin-top: -3vw;
+  margin-right: 2vw;
+}
 
-  .welcome {
-    text-align: center;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 600;
-    font-size: 3vw;
-    height: 2vw;
-    margin-top: -0.7vw;
-    padding-bottom: 1vw;
-  }
-  
-  .description {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white; 
-    font-weight: 400;
-    font-size: 1.5vw;
-  }
+.pagetitle {
+  color: rgb(233, 210, 210);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  font-size: 4vw;
+  margin-left: 20vw;
+  margin-top: -1.5vw;
+  width: 60vw;
+}
+
+.intro {
+  width: 80vw;
+  height: 16vw;
+  border: 2px #e97ba5 solid;
+  box-shadow: 2px 3px 5px 2px #e97ba5;
+  background-color: #e43f7e;
+  margin-top: 6vw;
+  margin-left: 8vw;
+  padding: 2vw;
+}
+
+.welcome {
+  text-align: center;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  font-size: 3vw;
+  height: 2vw;
+  margin-top: -0.7vw;
+  padding-bottom: 1vw;
+}
+
+.description {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5vw;
+}

@@ -49,7 +49,7 @@ const Paintings = () => {
   return (
     <div>
       <header>
-        <Link to="/">
+        <Link to="/Artists">
           <FiChevronLeft className={styles.backicon} />
         </Link>
         <h2 className={styles.pagetitle}>artist paintings</h2>
