@@ -1,4 +1,6 @@
 import React from 'react';
+import { CiMicrophoneOn, CiSettings } from 'react-icons/ci';
+import styles from '../styles/Home.module.css';
 
 const Home = () => {
   const info = {
@@ -8,9 +10,17 @@ const Home = () => {
   return (
 
     <div className="home">
-      <h2>Welcome to our page!</h2>
-      <p className="home-description">{info.line1}</p>
-      <p className="home-description">{info.line2}</p>
+      <header>
+        <h2 className={styles.pagetitle}>met top artists</h2>
+        <CiMicrophoneOn className={styles.mic} />
+        <CiSettings className={styles.settings} />
+      </header>
+
+      <div className={styles.intro}>
+        <h2 className={styles.welcome}>Welcome to our page!</h2>
+        <p className={styles.description}>{info.line1}</p>
+        <p className={styles.description}>{info.line2}</p>
+      </div>
     </div>
   );
 };

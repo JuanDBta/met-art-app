@@ -44,7 +44,7 @@
 
 .headercollection {
   width: 100vw;
-  height: 10vw;
+  height: 6vw;
   border-bottom: 0.3vw #e97ba5 solid;
   background-color: #e43f7e;
   margin-top: -4.3vw;
@@ -54,15 +54,16 @@
 }
 
 .mic {
-  width: 5vw;
+  width: 3vw;
   height: auto;
   margin-top: -3vw;
   margin-left: 4vw;
   padding-left: 6vw;
+  padding-right: 2vw;
 }
 
 .settings {
-  width: 5vw;
+  width: 3vw;
   height: auto;
   margin-top: -3vw;
   margin-right: 2vw;
@@ -74,7 +75,7 @@
   text-align: center;
   font-size: 4vw;
   margin-left: 18vw;
-  margin-top: 0;
+  margin-top: -1.5vw;
   width: 60vw;
 }
 

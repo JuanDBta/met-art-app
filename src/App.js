@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import MyCollection from './components/MyCollection';
 import Artists from './components/Artists';
 import Paintings from './components/Paintings';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <NavBar className="bar" />
       </header>
       <Routes>
-        <Route path="/" element={<Artists />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/Artists" element={<Artists />} />
         <Route path="/Paintings/:artistLastName" element={<Paintings />} />
         <Route path="/MyCollection" element={<MyCollection />} />
       </Routes>
