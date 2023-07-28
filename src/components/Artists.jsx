@@ -6,7 +6,7 @@ import { fetchArtistsByName } from '../redux/features/artists/artistsSlice';
 import selectedArtists from './selectedArtists';
 import styles from '../styles/Artists.module.css';
 import VanGogh from '../images/vangogh.jpg';
-import Renoir from '../images/Pierre-auguste-Renoir-Self-Portrait-2-.jpeg';
+import Renoir from '../images/Pierre-auguste-Renoir-Self-Portrait-2-.jpg';
 import Klimt from '../images/el-beso-klimt.jpg';
 import Degas from '../images/degas.jpg';
 import Cezanne from '../images/selbstbildnis_cezanne_E.jpg';
