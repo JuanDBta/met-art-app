@@ -73,8 +73,8 @@ const Artists = () => {
               </Link>
               <div className={styles.artistinfo}>
                 <div className={styles.namecontainer}>
-                  <h3 className={styles.artistname}>{`${artist.name}`}</h3>
-                  <h3 className={styles.artistlastname}>{`${artist.lastname}`}</h3>
+                  <h3 className={styles.artistname}>{artist.name}</h3>
+                  <h3 className={styles.artistlastname}>{artist.lastname}</h3>
                 </div>
                 <h4 className={styles.statsnumber}>
                   {artists[artist.lastname]?.length || 0}
